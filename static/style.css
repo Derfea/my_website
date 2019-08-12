@@ -1,25 +1,10 @@
-    p{
-        color:blue;
-    }
+.navigation{
+    list-style-type: none;
+}
 
+.navigation-item{
+    float: left;
+    padding-left: 10px;
+    padding-right: 10px;
+}
 
-    h1{
-        color:green;
-    }
-
-    h2{
-        color:green;
-        font-size: 50px;
-    }
-
-    h3{
-        color:green;
-    }
-
-    .test {
-        text-decoration: underline;
-    }
-
-    .container {
-
-    }
