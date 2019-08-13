@@ -38,3 +38,11 @@ def test():
     name = args.get("name")
 
     return render_template("test.html", name = name, age = age)
+
+@app.route("/profile")
+def profile():
+    return render_template("Profile.html")
+
+@app.route("/roblox")
+def roblox():
+    return render_template("Roblox.html")
