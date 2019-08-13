@@ -12,5 +12,5 @@ def hello():
 
 @app.route("/test")
 def test():
-    print(request)
+    print(request.args)
     return render_template("test.html", name="Chikamso Kanu")
