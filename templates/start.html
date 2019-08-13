@@ -1,8 +1,10 @@
 {% extends "layouts/main.html" %}
+
 {% block content %}
-    {% for item in Items %}
-        <h1>{{item}}</h1>
-    {% endfor %}
+    <h1> {{person[0]}} {{person[1]}} </h1>
+        {% for item in Items %}
+            <p>{{item.name}} {{ item.amounts}} needed!</p>
+        {% endfor %}
 {% endblock %}
 
 
