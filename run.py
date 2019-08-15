@@ -46,3 +46,11 @@ def profile():
 @app.route("/roblox")
 def roblox():
     return render_template("Roblox.html")
+
+@app.route("/Minecraft")
+def minecraft():
+    return render_template("Minecraft.html")
+
+@app.route("/Fortnite")
+def fortnite():
+    return render_template("Fortnight.html")
