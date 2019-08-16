@@ -5,26 +5,32 @@
         {% for item in Items %}
             <p>{{item.name}} {{ item.amounts}} needed!</p>
         {% endfor %}
-{% endblock %}
+
 
 
     <div class="row">
-        <div class="six columns">
+        <div class="six-columns">
             <table class="u-full-width">
                 <thead>
                     <tr>
-                        <td>Do I like school</td>
-                        <td>I love maths</td>
-                     </tr>
+                        <th>Heading Col 1</th>
+                        <th>Heading Col 2</th>
+                    </tr>
+
                 </thead>
                 <tr>
-                        <td>My name is...</td>
-                        <td> Chikamso Kanu</td>
+                    <td>My name is...</td>
+                    <td>Chikamso Kanu</td>
+                </tr>
+                <tr>
+                    <td>My name is...</td>
+                    <td>Chikamso Kanu</td>
                 </tr>
             </table>
         </div>
-        <div class="six columns">
+        <div class="six-columns">
+            Area2
         </div>
-        </div>
+    </div>
 
-
+{% endblock %}
