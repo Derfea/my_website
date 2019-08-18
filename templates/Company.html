@@ -1,0 +1,27 @@
+{% extends "layouts/main.html" %}
+
+{% block content %}
+
+    {% if Company != None: %}
+        {% if Money != None: %}
+            {% if Good != None: %}
+                <h1>My Company is: {{Company}}</h1>
+                <h1>I have {{Money}} Pounds</h1>
+                <h1>I like it because: {{Good}}</h1>
+            {% endif %}
+        {% endif %}
+    {% endif %}
+
+    <form method="get">
+        <label for="good">What's your Company?</label>
+        <input type="text" name="What's your Company?" id="good" value="{% if Company != None: %}{{Company}}{% endif %}">
+        <label for="bad">How much money do you get?</label>
+        <input type="text" name="How much money do you get?" id="bad" value="{% if Money != None: %}{{Money}}{% endif %}">
+        <label for="ok">Why do you like it?</label>
+        <input type="text" name="Why do you like it?" id="ok" value="{% if Good != None: %}{{Good}}{% endif %}">
+        <br/>
+        <input type="submit" value="Run form">
+    </form>
+
+{% endblock %}
+

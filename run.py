@@ -54,3 +54,14 @@ def minecraft():
 @app.route("/Fortnite")
 def fortnite():
     return render_template("Fortnight.html")
+
+@app.route("/Company")
+def company():
+    company = request.args.get("Company")
+    money = request.args.get("Money")
+    good = request.args.get("Good")
+
+    return render_template("Company.html",
+                            Company = company,
+                            Money = money,
+                            Good = good)
