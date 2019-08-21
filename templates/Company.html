@@ -1,27 +1,45 @@
 {% extends "layouts/main.html" %}
 
 {% block content %}
-
-    {% if Company != None: %}
-        {% if Money != None: %}
-            {% if Good != None: %}
-                <h1>My Company is: {{Company}}</h1>
-                <h1>I have {{Money}} Pounds</h1>
-                <h1>I like it because: {{Good}}</h1>
+    {% if company1 != None: %}
+        {% if money != None: %}
+            {% if good != None: %}
+                <h1>What's your Company?: {{company1}}</h1>
+                <h1>How much money do you get?: {{money}}</h1>
+                <h1>Why do you like it?: {{good}}</h1>
             {% endif %}
         {% endif %}
     {% endif %}
 
     <form method="get">
         <label for="good">What's your Company?</label>
-        <input type="text" name="What's your Company?" id="good" value="{% if Company != None: %}{{Company}}{% endif %}">
+        <input type="text" name="What's your Company?" id="good" value="{% if company1 != None: %}{{company1}}{% endif %}">
         <label for="bad">How much money do you get?</label>
-        <input type="text" name="How much money do you get?" id="bad" value="{% if Money != None: %}{{Money}}{% endif %}">
+        <input type="text" name="How much money do you get?" id="bad" value="{% if money != None: %}{{money}}{% endif %}">
         <label for="ok">Why do you like it?</label>
-        <input type="text" name="Why do you like it?" id="ok" value="{% if Good != None: %}{{Good}}{% endif %}">
+        <input type="text" name="Why do you like it?" id="ok" value="{% if good != None: %}{{good}}{% endif %}">
         <br/>
         <input type="submit" value="Run form">
     </form>
 
+    <table>
+        <thead>
+            <tr>
+                <th>{% if company1 != None: %}{{company1}}{% endif %}</th>
+                <th>{% if money != None: %}{{money}}{% endif %}</th>
+                <th>{% if good != None: %}{{good}}{% endif %}</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for row in table1 %}
+            <tr>
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}
+
+
 

@@ -31,6 +31,7 @@ def hello():
     output = render_template("start.html", person=person , Items=Items)
     return output
 
+
 @app.route("/test")
 def test():
     args =  request.args
@@ -39,29 +40,76 @@ def test():
 
     return render_template("test.html", name = name, age = age)
 
+
 @app.route("/profile")
 def profile():
     return render_template("Profile.html")
+
 
 @app.route("/roblox")
 def roblox():
     return render_template("Roblox.html")
 
+
 @app.route("/Minecraft")
 def minecraft():
     return render_template("Minecraft.html")
 
+
 @app.route("/Fortnite")
 def fortnite():
     return render_template("Fortnight.html")
+#
+#
+# @app.route("/Company")
+# def company():
+#     company1 = request.args.get("company")
+#     money = request.args.get("money")
+#     good = request.args.get("good")
+#
+#     # table1 = []
+#     # for x in range(1, 50):
+#     #     table1.append((x, x*money))
+#     # print(table1)
+#
+#     return render_template("Company.html",
+#                            company=company1,
+#                            money=money,
+#                            good=good)
+#
+#
+# @app.route("/currency")
+# def currency():
+#     currency1 = request.args.get("currency1")
+#     currency2 = request.args.get("currency2")
+#     rate = request.args.get("rate")
+#
+#     table1 = []
+#     for x in range(1, 50):
+#         table1.append((x, x*rate))
+#     print(table1)
+#
+#     return render_template("currency.html",
+#                            currency1=currency1,
+#                            currency2=currency2,
+#                            rate=float(rate),
+#                            table1=table1)
+#
 
-@app.route("/Company")
-def company():
-    company = request.args.get("Company")
-    money = request.args.get("Money")
-    good = request.args.get("Good")
+@app.route("/money")
+def money():
+    currency1 = request.args.get("currency1")
+    currency2 = request.args.get("currency2")
+    rate = request.args.get("rate")
 
-    return render_template("Company.html",
-                            Company = company,
-                            Money = money,
-                            Good = good)
+    # table1 = []
+    # for x in range(1, 50):
+    #     table1.append((x, x*rate))
+    # print(table1)
+
+    return render_template("money.html",
+                           currency1=currency1,
+                           currency2=currency2,
+                           rate=rate
+                           )
+                           # table1=table1)
