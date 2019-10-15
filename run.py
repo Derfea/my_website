@@ -34,7 +34,7 @@ def hello():
 
 @app.route("/test")
 def test():
-    args =  request.args
+    args = request.args
     age = args.get("age")
     name = args.get("name")
 
@@ -59,57 +59,32 @@ def minecraft():
 @app.route("/Fortnite")
 def fortnite():
     return render_template("Fortnight.html")
-#
-#
-# @app.route("/Company")
-# def company():
-#     company1 = request.args.get("company")
-#     money = request.args.get("money")
-#     good = request.args.get("good")
-#
-#     # table1 = []
-#     # for x in range(1, 50):
-#     #     table1.append((x, x*money))
-#     # print(table1)
-#
-#     return render_template("Company.html",
-#                            company=company1,
-#                            money=money,
-#                            good=good)
-#
-#
-# @app.route("/currency")
-# def currency():
-#     currency1 = request.args.get("currency1")
-#     currency2 = request.args.get("currency2")
-#     rate = request.args.get("rate")
-#
-#     table1 = []
-#     for x in range(1, 50):
-#         table1.append((x, x*rate))
-#     print(table1)
-#
-#     return render_template("currency.html",
-#                            currency1=currency1,
-#                            currency2=currency2,
-#                            rate=float(rate),
-#                            table1=table1)
-#
 
-@app.route("/money")
-def money():
-    currency1 = request.args.get("currency1")
-    currency2 = request.args.get("currency2")
-    rate = request.args.get("rate")
 
-    # table1 = []
-    # for x in range(1, 50):
-    #     table1.append((x, x*rate))
-    # print(table1)
+@app.route("/Company")
+def company():
+    company1 = request.args.get("company")
+    money = request.args.get("money")
+    good = request.args.get("good")
 
-    return render_template("money.html",
-                           currency1=currency1,
-                           currency2=currency2,
-                           rate=rate
-                           )
-                           # table1=table1)
+    table1 = []
+    for x in range(1, 50):
+        table1.append((x, x*money))
+    print(table1)
+
+    return render_template("Company.html",
+                           company=company1,
+                           money=money,
+                           good=good,
+                           table1=table1)
+
+@app.route("/odd_number")
+def odd_number():
+    currency1 = request.args.get("name")
+    currency2 = request.args.get("age")
+    rate = request.args.get("What")
+
+    return render_template("odd_number1.html",
+                           currency1={{currency1}},
+                           currency2={{currency2}},
+                           rate={{rate}})

@@ -22,23 +22,24 @@
         <input type="submit" value="Run form">
     </form>
 
-    <table>
+   <table>
         <thead>
             <tr>
-                <th>{% if company1 != None: %}{{company1}}{% endif %}</th>
-                <th>{% if money != None: %}{{money}}{% endif %}</th>
-                <th>{% if good != None: %}{{good}}{% endif %}</th>
+                <th>{% if currency1 != None: %}{{currency1}}{% endif %}</th>
+                <th>{% if currency2 != None: %}{{currency2}}{% endif %}</th>
+                <th>{% if rate != None: %}{{rate}}{% endif %}</th>
             </tr>
         </thead>
         <tbody>
-        {% for row in table1 %}
+            {% for row in table1 %}
             <tr>
                 <td>{{row[0]}}</td>
                 <td>{{row[1]}}</td>
             </tr>
-            {% endfor %}
         </tbody>
+
     </table>
+
 {% endblock %}
 
 
