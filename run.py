@@ -1,6 +1,14 @@
 from flask import Flask, request, render_template
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
+app.config["SQLAlCHEMY_DATABASE_URI"] = "sqlite:////mnt/c/Users/antho/Documents/database_files/filestorage.db"
+db = SQLAlchemy(app)
+
+class FileContents(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(300))
+    data = db.Column(db.LargeBinary)
 
 class Item():
     def __init__(self, name, amounts):
@@ -88,3 +96,22 @@ def odd_number():
                            currency1={{currency1}},
                            currency2={{currency2}},
                            rate={{rate}})
+
+
+@app.route("/Game")
+def game():
+    return render_template("Game.html")
+
+
+@app.route("/upload", methods=["POST"])
+def upload():
+    file = request.files["inputFile"]
+
+    newFile = FileContents(name=file.filename, data=file.read())
+    db.session.add(newFile)
+    db.session.commit()
+
+    return "Save " + file.filename + " to the database!"
+
+if __name__ =="__main__":
+    app.run(debug=True)
